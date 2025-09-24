@@ -14,7 +14,6 @@ const ChatContainer = ({ selectedUser, setSelectedUser }) => {
     <div className='h-full flex flex-col relative backdrop-blur-lg overflow-hidden'>
       {/* -----------Header section---------- */}
       <div className='flex flex-item-center gap-3 py-3 mx-4 border-stone-500'>
-        {/* user profilr, name and info icon */}
         <img src={assets.profile_martin} alt="" className='w-8 rounded-full' />
         <p className='flex-1 text-lg text-white flex items-center gap-2'>Martin Jhonson
           <span className='w-2 h-2 rounded-full bg-green-500'></span>
