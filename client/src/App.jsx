@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import ProfilePage from './pages/ProfilePage'
@@ -17,7 +17,8 @@ const App = () => {
       {/* App content */}
       <div className="relative z-10">
         <Routes>
-          <Route path='/' element = {<HomePage/>}/>
+          <Route path='/' element = {<Navigate to="/login"/>}/>
+          <Route path='/home' element = {<HomePage/>}/>
           <Route path='/login' element = {<LoginPage/>}/>
           <Route path='/profile' element = {<ProfilePage/>}/>
         </Routes>
