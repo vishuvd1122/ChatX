@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { ToastContainer } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-import { handleError, handleSuccess } from '../utils'; // Assuming this file exists and works
+import { handleError, handleSuccess } from '../utils'; 
 
 const Signup = () => {
   const [signupInfo, setSignupInfo] = useState({
-    username: "",
+    name: "",
     email: "",
     password: ""
   });
@@ -21,9 +21,9 @@ const Signup = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    const { username, email, password } = signupInfo;
-    if (!username || !email || !password) {
-      return handleError("Username, email and password are required!");
+    const { name, email, password } = signupInfo;
+    if (!name || !email || !password) {
+      return handleError("name, email and password are required!");
     }
 
     try {
@@ -38,7 +38,7 @@ const Signup = () => {
       const result = await response.json();
       const { success, message } = result;
       if (success) {
-        handleSuccess(message);
+        handleSuccess("Account Created! Please Login now.");
         setTimeout(() => {
           navigate("/login");
         }, 1000);
@@ -63,10 +63,10 @@ const Signup = () => {
         <form onSubmit={handleSignup} className='flex flex-col gap-5'>
           <input
             type="text"
-            placeholder='Username'
+            placeholder='Enter your name..'
             className='w-full px-4 py-3 bg-gray-900/70 border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300'
-            name="username"
-            value={signupInfo.username}
+            name="name"
+            value={signupInfo.name}
             onChange={handleChange}
           />
           <input
