@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import ChatContainer from "../components/ChatContainer";
 import RightSidebar from "../components/RightSidebar";
 
 const HomePage = () => {
+    const navigate = useNavigate();
 
     const [selectedUser,setSelectedUser]=useState(false)
+    const [loggedInUser,setLoggedInUser] = useState('');
+    useEffect(() => {
+    const user = localStorage.getItem("loggedInUser");
+    if (user) {
+      setLoggedInUser(user);
+      // setUserInitial(user.charAt(0).toUpperCase());
+    } else {
+      // If no user found, redirect to login
+      navigate("/login");
+    }
+  }, [navigate]); // Added navigate to dependency array
+
 
 
     return (

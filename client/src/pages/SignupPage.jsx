@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import { ToastContainer } from "react-toastify"
 import { Link, useNavigate } from "react-router-dom"
@@ -71,7 +70,7 @@ const Signup = () => {
         {/* Form section */}
         <div className='flex flex-col justify-center p-8 md:p-14'>
           <h1 className='mb-3 text-4xl font-bold'>SignUp</h1>
-          <span className='font-light text-gray-400 mb-8'>
+          <span className='font-light text-gray-700 mb-8'>
             Create your account to get started!
           </span>
 
@@ -86,7 +85,7 @@ const Signup = () => {
                 autoFocus
                 placeholder='Enter your name..'
                 value={SignupInfo.name}
-                className='w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
+               className='w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
               />
             </div>
 
@@ -99,7 +98,7 @@ const Signup = () => {
                 name='email'
                 placeholder='Enter your email..'
                 value={SignupInfo.email}
-                className='w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                className='w-full p-2 border border-gray-300 rounded-md placeholder:font-light text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
               />
             </div>
 
@@ -112,7 +111,7 @@ const Signup = () => {
                 name='password'
                 placeholder='Enter your password..'
                 value={SignupInfo.password}
-                className='w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                className='w-full p-2 border border-gray-300 rounded-md placeholder:font-light text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
               />
             </div>
 

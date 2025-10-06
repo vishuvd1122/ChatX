@@ -1,11 +1,24 @@
 import React from 'react'
 import assets, { userDummyData } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
+import { handleSuccess } from '../utils'
 
 
 
 const Sidebar = ({ selectedUser, setSelectedUser }) => {
     const navigate = useNavigate()
+
+    const handleLogout=()=>{
+        localStorage.removeItem("token")
+        localStorage.removeItem("loggedInUser")
+        handleSuccess("User logged out!")
+        setTimeout(() => {
+            navigate("/login")
+        }, 500);
+
+    }
+
+
     return (
         <div className={`bg-[#818582]/10 h-full p-5 rounded-r-xl overflow-y-scroll text-white ${selectedUser ? 'max-md:hidden' : ''}`}>
             <div className='pb-5'>
@@ -18,7 +31,7 @@ const Sidebar = ({ selectedUser, setSelectedUser }) => {
                                 navigate('/profile')
                             }} className='cursor-pointer text-sm'>Edit Profile</p>
                             <hr className='my-2 border-t border-gray-500' />
-                            <p className='cursor-pointer text-sm'>Logout</p>
+                            <p onClick={handleLogout} className='cursor-pointer text-sm'>Logout</p>
                         </div>
 
 
