@@ -16,7 +16,17 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-});
+
+  profilePic: {
+    type: String,
+    default : "",
+  },
+
+  bio: {
+    type: String,
+    default : "Hi! I am using ChatX"
+  },
+} , {timestamps :true});
 
 
 const UserModel = mongoose.model("User", UserSchema)
